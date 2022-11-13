@@ -1,0 +1,71 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" class="width" opened id="side-cont">
+            
+            
+        
+        <mat-nav-list>
+            <br>
+            <a disabled mat-list-item >            <img src="https://res.cloudinary.com/benie/image/upload/v1659091140/avatar-3814049_640_lxxhz9.png" height="70" width="70" class="radius" />
+                
+            </a><br>
+            <h1 mat-list-item>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-address-book"></i>&nbsp;Contact</h1>
+            <a mat-list-item href="mailto:fullstack.benie@gmail.com"><i class="fa-solid fa-envelope"></i>&nbsp;fullstack.benie@gmail.com</a>
+            <a mat-list-item href="tel:+254708696335"><i class="fa-solid fa-mobile-screen"></i>&nbsp;+254 708-696-335</a>
+            <a mat-list-item href="https://github.com/benie254"><i class="fa-brands fa-github"></i>&nbsp;benie254</a>
+            <a mat-list-item href="https://www.linkedin.com/in/benson-langat-fullstack-developer/"><i class="fa-brands fa-linkedin"></i>&nbsp;Benson Langat</a>
+            <hr>
+            <h1 mat-list-item>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-paper-plane"></i>&nbsp;Message</h1>
+            <form #contactForm="ngForm">
+                <mat-form-field appearance="outline" class="rounded shadow" style="margin-top:5%;">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Name" name="name" #name="ngModel" ngModel type="text" required>
+                    <mat-icon matSuffix></mat-icon>
+                    <mat-hint>e.g <strong>John Doe</strong></mat-hint>
+                    <mat-error *ngIf="name.hasError('required') || name.pristine">
+                      Name is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field> 
+            </form>
+        </mat-nav-list>
+    </mat-sidenav>
+<mat-sidenav-content>
+    
+    <div class="container-fluid">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="https://res.cloudinary.com/benie/image/upload/v1668273866/Humaaans_-_Space_xjvahn.png" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body padding">
+                    <h2 class="card-title">About</h2>
+                    <p class="card-text font-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br><br>
+                        Rem adipisci illum officia, ea ad dicta maiores quos ipsum quis deserunt doloribus <br><br>
+                        inventore voluptas neque assumenda suscipit impedit fuga! Minus, dolor!</p>
+                </div>
+            </div>
+        </div>  
+        <div>
+            <div class="row g-0">
+                <div class="col-md-8">
+                    <div class="card-body align-right">
+                      <h2 class="card-title">Card title</h2>
+                      <p class="card-text font-lg">This is a wider card with supporting text <br><br>
+                        below as a natural lead-in to additional content. <br><br>
+                        This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                <div class="col-md-4">
+                    <img src="https://res.cloudinary.com/benie/image/upload/v1668273865/Humaaans_-_1_Character_lk62aj.png" class="img-fluid rounded-start" alt="">
+                </div>
+              </div>
+        </div>
+    </div>
+    
+    
+  </mat-sidenav-content>
+  
+</mat-sidenav-container>
+
+
+
