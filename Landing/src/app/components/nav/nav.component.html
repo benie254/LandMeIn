@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg color-two opacity sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="https://res.cloudinary.com/benie/image/upload/v1662909278/icons8-petrol-station-66_inmt3m.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/auth/register">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/auth">Login</a>
+          </li> 
+        </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+          <li class="nav-item">
+            <a class="nav-link active" style="font-family:'Carter One',cursive;font-size:20px;" aria-current="page" routerLink="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/logs/all" style="font-size:20px;">All Logs</a>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" style="font-family:'Carter One',cursive;font-size:20px;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/profile/">Profile</a></li>
+              <!-- <li *ngIf="isStaff"><a class="dropdown-item" href="{{backURL}}">Admin</a></li>
+              <li *ngIf="isSuper"><a class="dropdown-item" href="{{backURL}}">SuperUser</a></li> -->
+              <li><a class="dropdown-item" routerLink="admin">Admin</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" routerLink="/incident">Report Incident</a></li>
+              <li><a class="dropdown-item" routerLink="/contact">Contact Admin</a></li>
+              <li><hr class="dropdown-divider"></li>
+            </ul>
+          </li>
+        </ul>
+        <div >
+          <a type="button" routerLink="/search" class="btn btn-md btn-light btn-outline-primary"><i class="fa-solid fa-magnifying-glass"></i> Search</a>
+        </div>
+        
+    
+      
+      
+      </div>
+    </div>
+  </nav>
+  

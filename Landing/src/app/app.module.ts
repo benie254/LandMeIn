@@ -12,11 +12,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import * as Notiflix from 'notiflix';
+import { NgxEditorModule } from 'ngx-editor';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent
+    LandingComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +31,7 @@ import * as Notiflix from 'notiflix';
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
+    NgxEditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Editor } from 'ngx-editor';
 import * as Notiflix from 'notiflix';
 import { ContactService } from 'src/app/service/contact.service';
 
@@ -8,6 +9,8 @@ import { ContactService } from 'src/app/service/contact.service';
   styleUrls: ['./landing.component.less']
 })
 export class LandingComponent implements OnInit {
+  editor:any = Editor;
+  html: any = '';
 
 
   constructor(
@@ -15,6 +18,7 @@ export class LandingComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.editor = new Editor();
   }
   contact(contactData: any){
     Notiflix.Loading.pulse('Sending message... please wait.')
@@ -36,6 +40,10 @@ export class LandingComponent implements OnInit {
     //     )
     //   }
     // })
+  }
+
+  ngOnDestroy(): void {
+    this.editor.destroy();
   }
 
 }
