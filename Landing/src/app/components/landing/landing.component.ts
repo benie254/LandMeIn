@@ -20,7 +20,7 @@ export class LandingComponent implements OnInit {
     this.editor = new Editor();
   }
   
-  order(){
+  pOrder(){
     Notiflix.Confirm.show(
       'Confirm purchase',
       "Are you sure you want to place this order?",

@@ -46,5 +46,9 @@ export class NavComponent implements OnInit {
       }
     })
   }
+  goToDiv(Id: string) {
+    const el = document.getElementById('order');
+    el.scrollIntoView({ behavior: 'smooth' });
+}
 
 }
