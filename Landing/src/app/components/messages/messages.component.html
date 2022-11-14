@@ -1,0 +1,7 @@
+
+<div *ngIf="handlerService.messages.length" class="bg">
+    <br>
+    <div>
+        <span *ngFor="let error of handlerService.messages" class="alert alert-danger margin margin-top">{{error}} <span type="button" (click)="handlerService.clearMsg()"><i class="fa-regular fa-trash-can"></i></span></span>
+    </div>
+</div>

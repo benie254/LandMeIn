@@ -6,7 +6,7 @@
                 <h1 class="text-center">&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-paper-plane"></i>&nbsp;Message</h1>
                   <mat-accordion>
                       <mat-expansion-panel (opened)="panelOpenState = true"
-                      (closed)="panelOpenState = false">
+                      (closed)="panelOpenState = false" >
                         <mat-expansion-panel-header>
                           <mat-panel-title>
                               <i class="fa-solid fa-house-user"></i> Contact Form
@@ -18,7 +18,7 @@
                           <form id="expansion" #contactForm="ngForm" (ngSubmit)="contact(contactForm.value)" class=" bg-light shadow">
                             <mat-form-field appearance="outline" class="rounded bg shadow" style="margin-top:5%;">
                               <mat-label>Full Name</mat-label>
-                              <input matInput placeholder="Full Name" name="name" #name="ngModel" ngModel type="text" required>
+                              <input  matInput placeholder="Full Name" name="name" #name="ngModel" ngModel type="text" required>
                               <mat-icon matSuffix></mat-icon>
                               <mat-hint>e.g <strong>John Doe</strong></mat-hint>
                               <mat-error *ngIf="name.hasError('required') || name.pristine">

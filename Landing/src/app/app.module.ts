@@ -19,6 +19,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PolicyComponent } from './components/policy/policy.component';
 import { RecaptchaV3Module, RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RecaptchaV3Module, RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha';
     LandingComponent,
     NavComponent,
     FooterComponent,
-    PolicyComponent
+    PolicyComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
