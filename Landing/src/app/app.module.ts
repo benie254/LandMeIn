@@ -11,18 +11,22 @@ import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import * as Notiflix from 'notiflix';
 import { NgxEditorModule } from 'ngx-editor';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PolicyComponent } from './components/policy/policy.component';
+import { RecaptchaV3Module, RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    PolicyComponent
   ],
   imports: [
     BrowserModule,
@@ -36,8 +40,12 @@ import { FooterComponent } from './components/footer/footer.component';
     MatInputModule,
     NgxEditorModule,
     MatExpansionModule,
+    MatCheckboxModule,
+    RecaptchaV3Module,
   ],
-  providers: [],
+  providers: [{
+    provide: RECAPTCHA_V3_SITE_KEY, useValue: "6LfH_gUjAAAAAOuCtWb9UBXc30lXkov6Yufu76B5"
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

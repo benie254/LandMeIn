@@ -15,7 +15,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./nav.component.less']
 })
 export class NavComponent implements OnInit {
-  matcher = new MyErrorStateMatcher();
+  
 
   constructor() { }
 

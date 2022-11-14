@@ -16,7 +16,7 @@
                           </mat-panel-description>
                           </mat-expansion-panel-header>
                           <form id="expansion" #contactForm="ngForm" class=" bg-light shadow">
-                            <mat-form-field appearance="outline" class="rounded bg-light  padding-sm shadow" style="margin-top:5%;">
+                            <mat-form-field appearance="outline" class="rounded bg shadow" style="margin-top:5%;">
                               <mat-label>Full Name</mat-label>
                               <input matInput placeholder="Full Name" name="name" #name="ngModel" ngModel type="text" required>
                               <mat-icon matSuffix></mat-icon>
@@ -25,16 +25,19 @@
                                 Name is <strong>required</strong>
                               </mat-error>
                             </mat-form-field>&nbsp; 
-                            <mat-form-field appearance="outline" class="rounded bg-light shadow padding-sm" style="margin-top:5%;">
+                            <mat-form-field appearance="outline" class="rounded bg shadow" style="margin-top:5%;">
                               <mat-label>Email</mat-label>
-                              <input matInput placeholder="Email" name="email" #email="ngModel" ngModel type="email" required>
+                              <input matInput placeholder="Email" name="email" #email="ngModel" ngModel type="email" required [errorStateMatcher]="matcher" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
                               <mat-icon matSuffix></mat-icon>
                               <mat-hint>e.g <strong>username@provider.com</strong></mat-hint>
+                              <mat-error *ngIf="email.hasError('pattern')">
+                                Please enter a <strong>valid email address</strong>
+                              </mat-error>
                               <mat-error *ngIf="email.hasError('required') || email.pristine">
                                 Email is <strong>required</strong>
                               </mat-error>
                             </mat-form-field>&nbsp;
-                            <mat-form-field appearance="outline" class="rounded bg-light shadow padding-sm" style="margin-top:5%;">
+                            <mat-form-field appearance="outline" class="rounded bg shadow" style="margin-top:5%;">
                               <mat-label>Subject</mat-label>
                               <input matInput placeholder="Subject" name="subject" #subject="ngModel" ngModel type="text" required>
                               <mat-icon matSuffix></mat-icon>
@@ -43,7 +46,7 @@
                                 Subject is <strong>required</strong>
                               </mat-error>
                             </mat-form-field>&nbsp; <br>
-                            <mat-form-field appearance="outline" class="rounded bg-light shadow padding-sm" style="margin-top:5%;width:75%">
+                            <mat-form-field appearance="outline" class="rounded bg shadow" style="margin-top:5%;width:75%">
                               <mat-label>Message</mat-label>
                               <textarea matInput placeholder="Type your message..." name="message" #message="ngModel" ngModel type="text" required></textarea>
                               <mat-icon matSuffix></mat-icon>
@@ -51,7 +54,18 @@
                               <mat-error *ngIf="message.hasError('required') || message.pristine">
                                 Message is <strong>required</strong>
                               </mat-error>
-                            </mat-form-field><br><br>
+                            </mat-form-field>
+                            <!-- <mat-form-field appearance="outline"> -->
+                              <mat-checkbox name="policy" #policy="ngModel" ngModel required class="bg">I agree to the Privacy Policy and Terms of Service | <a href="/privacy-policy-TOS">Read more</a></mat-checkbox>
+                              <br>
+                              <span [hidden]="policy.valid || policy.pristine">
+                                <small class="light bg-danger">You must agree to the Privacy Policy & TOS <strong>to continue</strong></small>
+                              </span>
+                              <br>
+                             
+                            <!-- </mat-form-field> -->
+                            <button type="submit" class="btn btn-md btn-light btn-outline-primary" (click)="recaptcha()" [disabled]="contactForm.invalid"><i class="fa-solid fa-thumbs-up"></i> Send</button>
+                            <br><br>
                                 
                              
                         
