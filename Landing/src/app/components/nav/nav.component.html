@@ -21,7 +21,7 @@
           
         </ul>
         <div class="nav-item" style="float:right">
-            <form #subscribeForm="ngForm">
+            <form #subscribeForm="ngForm" (ngSubmit)="subscribe(subscribeForm.value)">
                 <label for="name">Name:&nbsp;</label>
                   <input placeholder="Full Name" name="name" class="rounded" #name="ngModel" ngModel type="text" required>
                   &nbsp;<span [hidden]="name.valid || name.pristine" class="bg-danger white">

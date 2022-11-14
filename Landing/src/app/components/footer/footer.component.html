@@ -15,7 +15,7 @@
                             Fill in this form to send us a message
                           </mat-panel-description>
                           </mat-expansion-panel-header>
-                          <form id="expansion" #contactForm="ngForm" class=" bg-light shadow">
+                          <form id="expansion" #contactForm="ngForm" (ngSubmit)="contact(contactForm.value)" class=" bg-light shadow">
                             <mat-form-field appearance="outline" class="rounded bg shadow" style="margin-top:5%;">
                               <mat-label>Full Name</mat-label>
                               <input matInput placeholder="Full Name" name="name" #name="ngModel" ngModel type="text" required>
@@ -64,7 +64,7 @@
                               <br>
                              
                             <!-- </mat-form-field> -->
-                            <button type="submit" class="btn btn-md btn-light btn-outline-primary" (click)="recaptcha()" [disabled]="contactForm.invalid"><i class="fa-solid fa-thumbs-up"></i> Send</button>
+                            <button type="submit" class="btn btn-md btn-light btn-outline-primary" [disabled]="contactForm.invalid"><i class="fa-solid fa-thumbs-up"></i> Send</button>
                             <br><br>
                                 
                              
