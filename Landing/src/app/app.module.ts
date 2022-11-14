@@ -10,6 +10,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule } from '@angular/forms';
 import * as Notiflix from 'notiflix';
 import { NgxEditorModule } from 'ngx-editor';
@@ -32,6 +33,7 @@ import { NavComponent } from './components/nav/nav.component';
     MatFormFieldModule,
     MatInputModule,
     NgxEditorModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -64,79 +64,72 @@
     </div>
     
     <hr>
-    <div class="bg rounded shadow">
+    <div class="bg rounded text-center bg-light shadow">
+      <h1 class="text-center">&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-paper-plane"></i>&nbsp;Message</h1>
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <i class="fa-solid fa-house-user"></i> Contact Form
+                </mat-panel-title>
+                <mat-panel-description>
+                  Fill in this form to send us a message
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+                <form #contactForm="ngForm" class=" bg-light shadow">
+                  <mat-form-field appearance="outline" class="rounded  padding-sm shadow" style="margin-top:5%;">
+                    <mat-label>Full Name</mat-label>
+                    <input matInput placeholder="Full Name" name="name" #name="ngModel" ngModel type="text" required>
+                    <mat-icon matSuffix></mat-icon>
+                    <mat-hint>e.g <strong>John Doe</strong></mat-hint>
+                    <mat-error *ngIf="name.hasError('required') || name.pristine">
+                      Name is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>&nbsp; 
+                  <mat-form-field appearance="outline" class="rounded  shadow padding-sm" style="margin-top:5%;">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Email" name="email" #email="ngModel" ngModel type="email" required>
+                    <mat-icon matSuffix></mat-icon>
+                    <mat-hint>e.g <strong>username@provider.com</strong></mat-hint>
+                    <mat-error *ngIf="email.hasError('required') || email.pristine">
+                      Email is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>&nbsp;
+                  <mat-form-field appearance="outline" class="rounded  shadow padding-sm" style="margin-top:5%;">
+                    <mat-label>Subject</mat-label>
+                    <input matInput placeholder="Subject" name="subject" #subject="ngModel" ngModel type="text" required>
+                    <mat-icon matSuffix></mat-icon>
+                    <mat-hint>e.g <strong>Inquiry</strong></mat-hint>
+                    <mat-error *ngIf="subject.hasError('required') || subject.pristine">
+                      Subject is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>&nbsp; <br>
+                  <mat-form-field appearance="outline" class="rounded  shadow padding-sm" style="margin-top:5%;width:75%">
+                    <mat-label>Message</mat-label>
+                    <textarea matInput placeholder="Type your message..." name="message" #message="ngModel" ngModel type="text" required></textarea>
+                    <mat-icon matSuffix></mat-icon>
+                    <mat-hint>e.g <strong>I was wondering if I could...</strong></mat-hint>
+                    <mat-error *ngIf="message.hasError('required') || message.pristine">
+                      Message is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                      
+                   
+              
+                  
+                    
+                    
+                    
+              </form>
+                </mat-expansion-panel>
+                </mat-accordion>
       <mat-nav-list>
-        <h1 class="text-center">&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-paper-plane"></i>&nbsp;Message</h1>
+        
       </mat-nav-list>
       
-    <div class="">
-      <form #contactForm="ngForm" class="padding-sm">
-        <div class="row">
-          <div class="col-sm-6">
-            <mat-form-field appearance="outline" class="rounded  padding-sm shadow" style="margin-top:5%;">
-              <mat-label>Full Name</mat-label>
-              <input matInput placeholder="Full Name" name="name" #name="ngModel" ngModel type="text" required>
-              <mat-icon matSuffix></mat-icon>
-              <mat-hint>e.g <strong>John Doe</strong></mat-hint>
-              <mat-error *ngIf="name.hasError('required') || name.pristine">
-                Name is <strong>required</strong>
-              </mat-error>
-            </mat-form-field> 
-          </div>
-          <div class="col-sm-6">
-            <mat-form-field appearance="outline" class="rounded  shadow padding-sm" style="margin-top:5%;">
-              <mat-label>Email</mat-label>
-              <input matInput placeholder="Email" name="email" #email="ngModel" ngModel type="email" required>
-              <mat-icon matSuffix></mat-icon>
-              <mat-hint>e.g <strong>username@provider.com</strong></mat-hint>
-              <mat-error *ngIf="email.hasError('required') || email.pristine">
-                Email is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-          </div>
-          </div>
-          <div class="row">
-          <div class="col-sm-6">
-            <mat-form-field appearance="outline" class="rounded  shadow padding-sm" style="margin-top:5%;">
-              <mat-label>Subject</mat-label>
-              <input matInput placeholder="Subject" name="subject" #subject="ngModel" ngModel type="text" required>
-              <mat-icon matSuffix></mat-icon>
-              <mat-hint>e.g <strong>Inquiry</strong></mat-hint>
-              <mat-error *ngIf="subject.hasError('required') || subject.pristine">
-                Subject is <strong>required</strong>
-              </mat-error>
-            </mat-form-field> 
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group" style="margin-top:2.5%;">
-              <div id="editor" class="NgxEditor__Wrapper shadow padding-md">
-                  <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
-                  <ngx-editor
-                    [editor]="editor"
-                    [ngModel]="html"
-                    [disabled]="false"
-                    [placeholder]="'Your message here here...'"
-                    name="message"
-                    required
-                    ngModel
-                    #message="ngModel"
-                  >
-                  <!-- <mat-error *ngIf="message.hasError('required') || message.pristine">
-                    Message is <strong>required</strong>
-                  </mat-error> -->
-                </ngx-editor>
-                  
-                </div>
-          </div>        
-          </div>
-         
-        </div>
-    
-        
-          
-          
-          
-    </form>
+    <div class="text-center">
+      
     </div>
     </div>
     
