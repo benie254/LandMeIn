@@ -11,8 +11,7 @@ import { ContactService } from 'src/app/service/contact.service';
 export class LandingComponent implements OnInit {
   editor:any = Editor;
   html: any = '';
-  isExpanded: boolean = false;
-  panelOpenState = false;
+  
 
 
   constructor(

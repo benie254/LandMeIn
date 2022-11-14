@@ -15,12 +15,14 @@ import { FormsModule } from '@angular/forms';
 import * as Notiflix from 'notiflix';
 import { NgxEditorModule } from 'ngx-editor';
 import { NavComponent } from './components/nav/nav.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    NavComponent
+    NavComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
